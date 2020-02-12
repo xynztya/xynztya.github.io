@@ -1,6 +1,6 @@
-  var options = {
+var options = {
     strings: [".security", ".linux", ".seo", ".php", ".server", ".hack", "etc.."],
-    typeSpeed: 40,
+    typeSpeed: 50,
     starDelay: 200,
     backDelay: 600,
     loop: true,
