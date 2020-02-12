@@ -490,7 +490,7 @@ function handleEscKey() {
   });
 }
 
-function handleTyping () {
+function handleTyping() {
   $(".element").typed({
     strings: ["CyberSecurity", "Pentester", "WebServer", "PHP Programming", "Linux OS a.k.a KALI Linux", "SEO Marketer"],
     typeSpeed: 50,
