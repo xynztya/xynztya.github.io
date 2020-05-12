@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Xynz</title>
     <link rel="icon" type="image/x-icon" href="xynz.gif">
+    <script src="typed2.js" type="text/javascript"></script>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/6d3730cd12.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,700' rel='stylesheet' type='text/css'>
@@ -98,31 +99,6 @@
         </div>
       </div>
     </div>
-    <script>
-		(function($) {
-			$(document).ready(function(){
-                var home = 'https://xynz.github.io';
-				var arr_linkJSHead = [
-                home+'/typed2.js',
-				];
-				function each_load_JS_head(item, index) {
-					load_JS_head(item);
-				}
-				if (!sessionStorage.getItem('external_js')) {
-					arr_linkJSHead.forEach(each_load_JS_head);
-					sessionStorage.setItem('external_js',1);
-				} else {
-					arr_linkJSHead.forEach(each_load_JS_head);
-				}
-				function load_JS_head(file) {
-					var inject_script = document.createElement('script');
-					inject_script.type = 'text/javascript';
-					inject_script.src = file;
-					return document.body.appendChild(inject_script);
-				}
-			});
-		}(jQuery));
-    </script>
 <script src="script.js" type="text/javascript"></script>
 </body>
 </html>
