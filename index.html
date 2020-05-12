@@ -10,12 +10,37 @@
     <link rel="icon" type="image/x-icon" href="xynz.gif">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/6d3730cd12.js"></script>
-    <script src="typed2.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,700' rel='stylesheet' type='text/css'>
   	<link href='https://fonts.googleapis.com/css?family=Droid+Serif:100,200,400,700' rel='stylesheet' type='text/css'>
-    <link rel='stylesheet' href='bootstrap.min.css'>
-    <link rel='stylesheet' href='animate.min.css'>
-    <link rel="stylesheet" href="style.css">  
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script>
+        (function($) {
+			$(document).ready(function(){
+                var home = 'https://xynz.github.io';
+    			var arr_linkCSSHead = [
+                home+'/bootstrap.min.css',
+                home+'/animate.min.css',
+                home+'/style.css',
+    			'',
+    			];
+    			function each_load_CSS_head(item, index) {
+    				load_CSS_head(item);
+    			}
+    			if (!sessionStorage.getItem('external_css')) {
+    				arr_linkCSSHead.forEach(each_load_CSS_head);
+    				sessionStorage.setItem('external_css',1);
+    			} else {
+    				arr_linkCSSHead.forEach(each_load_CSS_head);
+    			}
+    			function load_CSS_head(file) {
+    				var inject_link = document.createElement('link');
+    				inject_link.rel = 'stylesheet';
+    				inject_link.href = file;
+    				return document.head.appendChild(inject_link);
+    			}
+			});
+		}(jQuery));
+    </script>	
 </head>
 <body>
       <div class="container-fluid fill black-font">
@@ -73,6 +98,31 @@
         </div>
       </div>
     </div>
-    <script src="script.js" type="text/javascript"></script>
+    <script>
+		(function($) {
+			$(document).ready(function(){
+                var home = 'https://xynz.github.io';
+				var arr_linkJSHead = [
+                home+'/script.js',
+                home+'/typed2.js',
+				];
+				function each_load_JS_head(item, index) {
+					load_JS_head(item);
+				}
+				if (!sessionStorage.getItem('external_js')) {
+					arr_linkJSHead.forEach(each_load_JS_head);
+					sessionStorage.setItem('external_js',1);
+				} else {
+					arr_linkJSHead.forEach(each_load_JS_head);
+				}
+				function load_JS_head(file) {
+					var inject_script = document.createElement('script');
+					inject_script.type = 'text/javascript';
+					inject_script.src = file;
+					return document.body.appendChild(inject_script);
+				}
+			});
+		}(jQuery));
+    </script>
 </body>
 </html>
